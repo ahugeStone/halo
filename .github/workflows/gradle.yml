@@ -14,9 +14,12 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Gradle
-      run: ./gradlew build
+      run: |
+        ./gradlew build
+        pwd
+        ls -al
     - name : Upload artifact
       uses: actions/upload-artifact@v1
       with:
         name: halo-package
-        path: targets
+        path: target
